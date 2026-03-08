@@ -1,0 +1,53 @@
+## Source Code Java
+public class Tugas1 {
+    public static void main(String[] args) {
+
+        int[] x = {20, 15, 90, 13, 26};
+
+        System.out.println("Awal: ");
+        for (int i = 0; i < x.length; i++) {
+            System.out.print(x[i] + " ");
+        }
+        System.out.println("\n");
+
+        for (int i = 0; i < x.length - 1; i++) {
+
+            int min = 999999;
+            int index = i;
+
+            // mencari nilai terkecil
+            for (int j = i; j < x.length; j++) {
+                if (x[j] < min) {
+                    min = x[j];
+                    index = j;
+                }
+            }
+
+            // proses swap
+            if (x[i] > x[index]) {
+                int temp = x[i];
+                x[i] = x[index];
+                x[index] = temp;
+            }
+
+            // cetak setiap iterasi
+            System.out.print("Iterasi " + (i + 1) + ": ");
+            for (int k = 0; k < x.length; k++) {
+                System.out.print(x[k] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+## Hasil Output
+
+run:
+Awal: 
+20 15 90 13 26 
+
+Iterasi 1: 13 15 90 20 26 
+Iterasi 2: 13 15 90 20 26 
+Iterasi 3: 13 15 20 90 26 
+Iterasi 4: 13 15 20 26 90 
+BUILD SUCCESSFUL (total time: 0 seconds)
