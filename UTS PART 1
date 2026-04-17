@@ -1,0 +1,147 @@
+# CODING UTS PART 1
+
+public class Uts {
+
+    public static void main(String[] args) {
+        String nama[] = {
+            "Andi Pratama",
+            "Sinta Dewi Lestari",
+            "Budi Santoso",
+            "Rina Ayu Putri",
+            "Eko Wijaya",
+            "Maya Sari",
+            "Dimas Prakoso",
+            "Nadia Safira",
+            "Rizky Aditya",
+            "Putri Nirmala"
+        };
+
+        String nim[] = {
+            "2201012345","2201012567","2201012789","2201012910","2201013034",
+            "2201013256","2201013478","2201013690","2201013812","2201014035"
+        };
+
+        int nilai[] = {85, 92, 78, 88, 65, 95, 72, 81, 90, 76};
+        
+        // bubble sort
+
+        int n = nilai.length;
+
+        for(int i=0; i<n-1; i++){
+            for(int j=0; j<n-1-i; j++){
+                if(nilai[j] < nilai[j+1]){
+
+                    int tempNilai = nilai[j];
+                    nilai[j] = nilai[j+1];
+                    nilai[j+1] = tempNilai;
+
+                    String tempNama = nama[j];
+                    nama[j] = nama[j+1];
+                    nama[j+1] = tempNama;
+
+                    String tempNim = nim[j];
+                    nim[j] = nim[j+1];
+                    nim[j+1] = tempNim;
+                }
+            }
+        }
+
+        System.out.println("Hasil Bubble Sort:");
+        for(int i=0; i<n; i++){
+            System.out.println(nama[i] + " | " + nim[i] + " | " + nilai[i]);
+        }
+        
+        // insertion sort
+        
+        for(int i=1; i<nilai.length; i++){
+            int key = nilai[i];
+            String keyNama = nama[i];
+            String keyNim = nim[i];
+
+            int j = i-1;
+
+            while(j >= 0 && nilai[j] < key){
+                nilai[j+1] = nilai[j];
+                nama[j+1] = nama[j];
+                nim[j+1] = nim[j];
+                j--;
+            }
+
+            nilai[j+1] = key;
+            nama[j+1] = keyNama;
+            nim[j+1] = keyNim;
+        }
+
+        System.out.println("Hasil Insertion Sort:");
+        for(int i=0; i<nilai.length; i++){
+            System.out.println(nama[i] + " | " + nim[i] + " | " + nilai[i]);
+        }
+        
+        // selection sort
+        
+        for(int i=0; i<nilai.length-1; i++){
+            int max = i;
+
+            for(int j=i+1; j<nilai.length; j++){
+                if(nilai[j] > nilai[max]){
+                    max = j;
+                }
+            }
+
+            int tempNilai = nilai[i];
+            nilai[i] = nilai[max];
+            nilai[max] = tempNilai;
+
+            String tempNama = nama[i];
+            nama[i] = nama[max];
+            nama[max] = tempNama;
+
+            String tempNim = nim[i];
+            nim[i] = nim[max];
+            nim[max] = tempNim;
+        }
+
+        System.out.println("Hasil Selection Sort:");
+        for(int i=0; i<nilai.length; i++){
+            System.out.println(nama[i] + " | " + nim[i] + " | " + nilai[i]);
+        }
+    }
+}
+
+
+# HASIL DARI CODING tsb.
+
+Hasil Bubble Sort:
+Maya Sari | 2201013256 | 95
+Sinta Dewi Lestari | 2201012567 | 92
+Rizky Aditya | 2201013812 | 90
+Rina Ayu Putri | 2201012910 | 88
+Andi Pratama | 2201012345 | 85
+Nadia Safira | 2201013690 | 81
+Budi Santoso | 2201012789 | 78
+Putri Nirmala | 2201014035 | 76
+Dimas Prakoso | 2201013478 | 72
+Eko Wijaya | 2201013034 | 65
+Hasil Insertion Sort:
+Maya Sari | 2201013256 | 95
+Sinta Dewi Lestari | 2201012567 | 92
+Rizky Aditya | 2201013812 | 90
+Rina Ayu Putri | 2201012910 | 88
+Andi Pratama | 2201012345 | 85
+Nadia Safira | 2201013690 | 81
+Budi Santoso | 2201012789 | 78
+Putri Nirmala | 2201014035 | 76
+Dimas Prakoso | 2201013478 | 72
+Eko Wijaya | 2201013034 | 65
+Hasil Selection Sort:
+Maya Sari | 2201013256 | 95
+Sinta Dewi Lestari | 2201012567 | 92
+Rizky Aditya | 2201013812 | 90
+Rina Ayu Putri | 2201012910 | 88
+Andi Pratama | 2201012345 | 85
+Nadia Safira | 2201013690 | 81
+Budi Santoso | 2201012789 | 78
+Putri Nirmala | 2201014035 | 76
+Dimas Prakoso | 2201013478 | 72
+Eko Wijaya | 2201013034 | 65
+BUILD SUCCESSFUL (total time: 0 seconds)
